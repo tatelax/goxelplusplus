@@ -83,7 +83,8 @@ static bool calculate_target_direction(
     float target_pos[3], normal[3];
     int snap_mask = goxel.snap_mask | SNAP_ROUNDED;
 
-    if (!goxel_unproject(viewport, cursor_pos, snap_mask, NULL, 0, target_pos, normal))
+    if (!goxel_unproject(viewport, cursor_pos, snap_mask, NULL, 0, target_pos,
+                         normal))
     {
         return false;
     }
@@ -516,11 +517,13 @@ int goxel_unproject(const float viewport[4],
                 float snap_unit = goxel.snap_units[i];
                 float axis_snap_offset = goxel.snap_offsets[i] * snap_unit;
                 if (snap_unit > 0) {
-                    out[i] = floor((out[i] - offset) / snap_unit + 0.5) * snap_unit +
+                    out[i] = floor((out[i] - offset) / snap_unit + 0.5) *
+                                     snap_unit +
                              0.5 + offset + axis_snap_offset;
                 }
                 else {
-                    out[i] = floor(out[i] - offset + 0.5) + 0.5 + offset + axis_snap_offset;
+                    out[i] = floor(out[i] - offset + 0.5) + 0.5 + offset +
+                             axis_snap_offset;
                 }
             }
         }
@@ -782,7 +785,7 @@ static void update_window_title(void)
     bool changed;
 
     changed = image_get_key(goxel.image) != goxel.image->saved_key;
-    sprintf(buf, "Goxel %s%s %s%s%s",
+    sprintf(buf, "Goxel++ %s%s %s%s%s",
             GOXEL_VERSION_STR,
             DEBUG ? " (debug)" : "",
             changed ? "*" : "",
@@ -1013,11 +1016,12 @@ static int on_rotate(const gesture_t *gest, void *user)
         float target_pos[3], target_normal[3];
         int snap_mask = goxel.snap_mask | SNAP_ROUNDED;
         bool found_target = goxel_unproject(
-                gest->viewport, gest->pos, snap_mask, NULL, 0, target_pos, target_normal);
+                gest->viewport, gest->pos, snap_mask, NULL, 0, target_pos,
+                target_normal);
 
         if (found_target) {
-            // Found target position - calculate pivot point at center of view at same
-            // distance
+            // Found target position - calculate pivot point at center of view
+            // at same distance
             float camera_pos[3], camera_to_target[3];
             float viewport_center[2];
             float ray_origin[3], ray_dir[3];
@@ -1106,9 +1110,9 @@ static int on_zoom(const gesture_t *gest, void *user)
         // Apply zoom towards the target position with collision detection
         float zoom_amount = zoom * goxel.zoom_speed * zoom_scale;
         apply_zoom_with_collision(camera, target_dir, zoom_amount, volume);
-            }
-        else {
-            // No target found, use camera forward direction as fallback
+    }
+    else {
+        // No target found, use camera forward direction as fallback
         float forward_dir[3];
         get_camera_forward_direction(camera, forward_dir);
 
@@ -1251,7 +1255,8 @@ void goxel_mouse_in_view(
                         camera_pos, viewport, inputs->touches[0].pos, volume,
                         target_dir, &zoom_scale))
             {
-                // Apply zoom towards the target position with collision detection
+                // Apply zoom towards the target position with collision
+                // detection
                 zoom_amount *= zoom_scale;
                 apply_zoom_with_collision(
                         camera, target_dir, zoom_amount, volume);
@@ -1300,13 +1305,15 @@ void goxel_mouse_in_view(
 
     // Camera fly mode with FPS-style mouse look
     bool rmb_held = inputs->touches[0].down[2];
-    
-    // Check if any movement keys are pressed
-    bool movement_keys_pressed = inputs->keys['W'] || inputs->keys['S'] ||
-                                inputs->keys['A'] || inputs->keys['D'] ||
-                                inputs->keys[' '] || inputs->keys[KEY_LEFT_CONTROL];
 
-    // Enter fly mode when right mouse button is pressed AND movement keys are used
+    // Check if any movement keys are pressed
+    bool movement_keys_pressed =
+            inputs->keys['W'] || inputs->keys['S'] || inputs->keys['A'] ||
+            inputs->keys['D'] || inputs->keys[' '] ||
+            inputs->keys[KEY_LEFT_CONTROL];
+
+    // Enter fly mode when right mouse button is pressed AND movement keys are
+    // used
     if (rmb_held && movement_keys_pressed && !goxel.move_origin.fly_mode) {
         goxel.move_origin.fly_mode = true;
         goxel.move_origin.fly_mouse_captured = false;

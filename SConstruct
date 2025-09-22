@@ -132,7 +132,7 @@ if target_os == 'darwin':
         'OpenGL', 'Cocoa', 'AppKit', 'UniformTypeIdentifiers'])
     env.Append(LIBS=['m', 'objc'])
     # Fix warning in noc_file_dialog (the code should be fixed instead).
-    env.Append(CCFLAGS=['-Wno-deprecated-declarations'])
+    env.Append(CCFLAGS=['-Wno-deprecated-declarations', '-Wno-gnu-folding-constant'])
     env.ParseConfig('pkg-config --cflags --libs glfw3')
     env['sound'] = False
 
@@ -167,4 +167,4 @@ try:
 except:
     pass
 
-env.Program(target='goxel', source=sorted(sources))
+env.Program(target='Goxel++', source=sorted(sources))
