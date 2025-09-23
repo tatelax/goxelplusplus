@@ -71,7 +71,7 @@ jobs:
         path: Goxel*.AppImage
         if-no-files-found: error
 
-  osx_x86_64:
+  macOS_x86_64:
     runs-on: macos-latest
     steps:
     - uses: actions/checkout@v4
@@ -126,7 +126,7 @@ jobs:
         if-no-files-found: error
 
   Success: # Not Necessary
-    needs: [linux_x86_64, osx_x86_64, windows_x86_64]
+    needs: [linux_x86_64, macOS_x86_64, windows_x86_64]
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4

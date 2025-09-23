@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		785D7FF22E825F7A004A670D /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 785D7FE72E8253CE004A670D /* libglfw3.a */; };
+		785D7FFD2E826459004A670D /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 785D7FFB2E82643F004A670D /* libglfw3.a */; };
 		F007DFE82C35546700526FA2 /* geometry.c in Sources */ = {isa = PBXBuildFile; fileRef = F007DFE62C35546700526FA2 /* geometry.c */; };
 		F00FC312226B2F7C0002F251 /* ini.c in Sources */ = {isa = PBXBuildFile; fileRef = F00FC2FC226B2F7B0002F251 /* ini.c */; };
 		F00FC313226B2F7C0002F251 /* gl.c in Sources */ = {isa = PBXBuildFile; fileRef = F00FC2FD226B2F7B0002F251 /* gl.c */; };
@@ -127,9 +127,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		785D7FE72E8253CE004A670D /* libglfw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libglfw3.a; path = ../../../../../../../opt/homebrew/Cellar/glfw/3.4/lib/libglfw3.a; sourceTree = "<group>"; };
 		785D7FE92E825C97004A670D /* glfw3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = glfw3.h; sourceTree = "<group>"; };
 		785D7FEA2E825C97004A670D /* glfw3native.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = glfw3native.h; sourceTree = "<group>"; };
+		785D7FFB2E82643F004A670D /* libglfw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libglfw3.a; sourceTree = "<group>"; };
 		F007DFE62C35546700526FA2 /* geometry.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = geometry.c; sourceTree = "<group>"; };
 		F007DFE72C35546700526FA2 /* geometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = geometry.h; sourceTree = "<group>"; };
 		F00FC2F9226B2F7B0002F251 /* sound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sound.h; sourceTree = "<group>"; };
@@ -293,7 +293,7 @@
 				F0EEB7E81C8EC4D1004AB676 /* libz.tbd in Frameworks */,
 				F07DEA331BD1014800BAA1AD /* CoreFoundation.framework in Frameworks */,
 				F07DE9E01BD0F16300BAA1AD /* OpenGL.framework in Frameworks */,
-				785D7FF22E825F7A004A670D /* libglfw3.a in Frameworks */,
+				785D7FFD2E826459004A670D /* libglfw3.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,7 +303,7 @@
 		785D7FE62E8253CE004A670D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				785D7FE72E8253CE004A670D /* libglfw3.a */,
+				785D7FFB2E82643F004A670D /* libglfw3.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -925,7 +925,7 @@
 				);
 				INFOPLIST_FILE = goxel/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				LIBRARY_SEARCH_PATHS = /opt/homebrew/Cellar/glfw/3.4/lib;
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)";
 				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				PRODUCT_BUNDLE_IDENTIFIER = co.magicengineering.goxelplusplus;
 				PRODUCT_NAME = "Goxel++";
@@ -971,7 +971,7 @@
 				);
 				INFOPLIST_FILE = goxel/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				LIBRARY_SEARCH_PATHS = /opt/homebrew/Cellar/glfw/3.4/lib;
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)";
 				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				PRODUCT_BUNDLE_IDENTIFIER = co.magicengineering.goxelplusplus;
 				PRODUCT_NAME = "Goxel++";
