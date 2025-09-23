@@ -31,6 +31,8 @@ vars.AddVariables(
 
 target_os = str(Platform())
 
+print(f"Detected platform: {target_os}")
+
 if target_os == 'posix':
     vars.AddVariables(
         EnumVariable('nfd_backend', 'Native file dialog backend', default='gtk',
@@ -112,13 +114,13 @@ if target_os == 'posix':
 
 
 # Windows compilation support.
-if target_os == 'msys':
+if target_os in ['msys', 'cygwin']:
     env.Append(CXXFLAGS=['-Wno-attributes', '-Wno-unused-variable',
-                         '-Wno-unused-function'])
-    env.Append(CCFLAGS=['-Wno-error=address']) # To remove if possible.
+                         '-Wno-unused-function', '-Wno-nontrivial-memcall'])
+    env.Append(CCFLAGS=['-Wno-error=address'])
     env.Append(LIBS=['glfw3', 'opengl32', 'z', 'tre', 'gdi32', 'Comdlg32',
-                     'ole32', 'uuid', 'shell32'],
-               LINKFLAGS='--static')
+                     'ole32', 'uuid', 'shell32', 'pthread'],
+               LINKFLAGS=['--static', '-mwindows'])
     sources += glob.glob('ext_src/glew/glew.c')
     sources.append('ext_src/nfd/nfd_win.cpp')
     env.Append(CPPPATH=['ext_src/glew'])
