@@ -99,7 +99,13 @@ jobs:
     - name: Build with xcode
       run: |
         cd osx/goxel
-        xcodebuild build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
+        # Detect Homebrew prefix (handles both Intel and Apple Silicon)
+        HOMEBREW_PREFIX=$(brew --prefix)
+        xcodebuild build \
+        CODE_SIGN_IDENTITY="" \
+        CODE_SIGNING_REQUIRED=NO \
+        HEADER_SEARCH_PATHS="\$(inherited) ${HOMEBREW_PREFIX}/include" \
+        LIBRARY_SEARCH_PATHS="\$(inherited) ${HOMEBREW_PREFIX}/lib"
         cd build/Release
         tar -cvf Goxel++.app.tar Goxel++.app
 

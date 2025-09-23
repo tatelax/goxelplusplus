@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		785D7FE82E8253CE004A670D /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 785D7FE72E8253CE004A670D /* libglfw3.a */; };
+		785D7FF22E825F7A004A670D /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 785D7FE72E8253CE004A670D /* libglfw3.a */; };
 		F007DFE82C35546700526FA2 /* geometry.c in Sources */ = {isa = PBXBuildFile; fileRef = F007DFE62C35546700526FA2 /* geometry.c */; };
 		F00FC312226B2F7C0002F251 /* ini.c in Sources */ = {isa = PBXBuildFile; fileRef = F00FC2FC226B2F7B0002F251 /* ini.c */; };
 		F00FC313226B2F7C0002F251 /* gl.c in Sources */ = {isa = PBXBuildFile; fileRef = F00FC2FD226B2F7B0002F251 /* gl.c */; };
@@ -128,6 +128,8 @@
 
 /* Begin PBXFileReference section */
 		785D7FE72E8253CE004A670D /* libglfw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libglfw3.a; path = ../../../../../../../opt/homebrew/Cellar/glfw/3.4/lib/libglfw3.a; sourceTree = "<group>"; };
+		785D7FE92E825C97004A670D /* glfw3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = glfw3.h; sourceTree = "<group>"; };
+		785D7FEA2E825C97004A670D /* glfw3native.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = glfw3native.h; sourceTree = "<group>"; };
 		F007DFE62C35546700526FA2 /* geometry.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = geometry.c; sourceTree = "<group>"; };
 		F007DFE72C35546700526FA2 /* geometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = geometry.h; sourceTree = "<group>"; };
 		F00FC2F9226B2F7B0002F251 /* sound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sound.h; sourceTree = "<group>"; };
@@ -288,10 +290,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				785D7FE82E8253CE004A670D /* libglfw3.a in Frameworks */,
 				F0EEB7E81C8EC4D1004AB676 /* libz.tbd in Frameworks */,
 				F07DEA331BD1014800BAA1AD /* CoreFoundation.framework in Frameworks */,
 				F07DE9E01BD0F16300BAA1AD /* OpenGL.framework in Frameworks */,
+				785D7FF22E825F7A004A670D /* libglfw3.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +306,16 @@
 				785D7FE72E8253CE004A670D /* libglfw3.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		785D7FEB2E825C97004A670D /* GLFW */ = {
+			isa = PBXGroup;
+			children = (
+				785D7FE92E825C97004A670D /* glfw3.h */,
+				785D7FEA2E825C97004A670D /* glfw3native.h */,
+			);
+			name = GLFW;
+			path = glfw/include/GLFW;
 			sourceTree = "<group>";
 		};
 		F00FC2F8226B2F7B0002F251 /* utils */ = {
@@ -488,6 +500,7 @@
 		F07DEA151BD0F33A00BAA1AD /* ext_src */ = {
 			isa = PBXGroup;
 			children = (
+				785D7FEB2E825C97004A670D /* GLFW */,
 				F09A62662B3BB8E6006A4464 /* meshoptimizer */,
 				F05D6E5A29D3E7EC004CA300 /* voxelizer */,
 				F0C37C8D2317CBF2000EF45F /* xxhash */,
@@ -889,6 +902,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				AUTOMATION_APPLE_EVENTS = NO;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = goxel/goxel.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
@@ -907,14 +921,11 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/goxel/goxel.pch";
 				HEADER_SEARCH_PATHS = (
 					"$(SRCROOT)/../../src",
-					"/opt/homebrew/include/**",
+					"$(SRCROOT)/../../ext_src/**",
 				);
 				INFOPLIST_FILE = goxel/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"/opt/homebrew/include/**",
-					/opt/homebrew/Cellar/glfw/3.4/lib,
-				);
+				LIBRARY_SEARCH_PATHS = /opt/homebrew/Cellar/glfw/3.4/lib;
 				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				PRODUCT_BUNDLE_IDENTIFIER = co.magicengineering.goxelplusplus;
 				PRODUCT_NAME = "Goxel++";
@@ -928,6 +939,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/goxel/goxel-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.2;
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
 		};
@@ -936,6 +948,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				AUTOMATION_APPLE_EVENTS = NO;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = goxel/goxel.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
@@ -954,14 +967,11 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/goxel/goxel.pch";
 				HEADER_SEARCH_PATHS = (
 					"$(SRCROOT)/../../src",
-					"/opt/homebrew/include/**",
+					"$(SRCROOT)/../../ext_src/**",
 				);
 				INFOPLIST_FILE = goxel/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"/opt/homebrew/include/**",
-					/opt/homebrew/Cellar/glfw/3.4/lib,
-				);
+				LIBRARY_SEARCH_PATHS = /opt/homebrew/Cellar/glfw/3.4/lib;
 				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				PRODUCT_BUNDLE_IDENTIFIER = co.magicengineering.goxelplusplus;
 				PRODUCT_NAME = "Goxel++";
@@ -975,6 +985,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/goxel/goxel-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.2;
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Release;
 		};

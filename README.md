@@ -2,6 +2,8 @@
 Goxel++
 =====
 
+[![Build Status](https://github.com/tatelax/goxelplusplus/actions/workflows/ci.yml/badge.svg)](https://github.com/tatelax/goxelplusplus/actions/workflows/ci.yml)
+
 Goxel++ is a fork of [Goxel](https://github.com/guillaumechereau/goxel). It includes several QOL improvements such as improved camera controls and additional settings which makes working with Goxel much less cumbersome for more complex models.
 
 Original webpage: https://goxel.xyz
