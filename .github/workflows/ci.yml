@@ -68,7 +68,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: appimage
-        path: Goxel++*.AppImage
+        path: Goxel*.AppImage
         if-no-files-found: error
 
   osx_x86_64:
