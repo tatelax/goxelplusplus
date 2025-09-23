@@ -54,9 +54,9 @@ install:
 	install -Dm644 snap/gui/Goxel++.desktop \
 	    $(DESTDIR)$(PREFIX)/share/applications/goxel++.desktop
 	install -Dm644 \
-	    snap/gui/io.github.guillaumechereau.Goxel.metainfo.xml \
+	    snap/gui/co.magicengineering.GoxelPlusPlus.metainfo.xml \
 	    $$(printf '%s%s' $(DESTDIR)$(PREFIX)/share/metainfo/ \
-	        io.github.guillaumechereau.Goxel.metainfo.xml)
+	        co.magicengineering.GoxelPlusPlus.metainfo.xml)
 
 .PHONY: uninstall
 uninstall:
@@ -67,7 +67,7 @@ uninstall:
 	done
 	rm -f $(DESTDIR)$(PREFIX)/share/applications/Goxel++.desktop
 	rm -f $$(printf '%s%s' $(DESTDIR)$(PREFIX)/share/metainfo/ \
-	         io.github.guillaumechereau.Goxel.metainfo.xml)
+	         co.magicengineering.GoxelPlusPlus.metainfo.xml)
 
 .PHONY: all
 
