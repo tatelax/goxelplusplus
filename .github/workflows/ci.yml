@@ -121,8 +121,19 @@ jobs:
     - name: Build with xcode
       run: |
         cd osx/goxel
-        xcodebuild build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ARCHS=arm64 ONLY_ACTIVE_ARCH=NO
+        # Ad-hoc signing - no personal info needed
+        xcodebuild build \
+        CODE_SIGN_IDENTITY="-" \
+        CODE_SIGNING_REQUIRED=YES \
+        ARCHS=arm64 \
+        ONLY_ACTIVE_ARCH=NO
+        
         cd build/Release
+        
+        # Verify it worked
+        codesign --verify --deep --strict --verbose=2 Goxel++.app
+        
+        # Archive
         tar -cvf Goxel++.app.tar Goxel++.app
 
     - name: Upload app Artifacts
