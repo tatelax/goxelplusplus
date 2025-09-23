@@ -71,12 +71,21 @@ jobs:
         path: Goxel*.AppImage
         if-no-files-found: error
 
-  macOS_x86_64:
+  macOS_arm64:
     runs-on: macos-latest
     steps:
     - uses: actions/checkout@v4
       with:
         submodules: recursive
+
+    - name: Verify Apple Silicon
+      run: |
+        if [[ $(uname -m) != "arm64" ]]; then
+          echo "Error: This job is configured to run only on Apple Silicon (arm64) architecture"
+          echo "Current architecture: $(uname -m)"
+          exit 1
+        fi
+        echo "Running on Apple Silicon: $(uname -m)"
 
     - name: Install dependencies
       run: |
@@ -92,9 +101,7 @@ jobs:
         echo "LDFLAGS=-L$(brew --prefix)/lib $LDFLAGS" >> $GITHUB_ENV
         echo "CPPFLAGS=-I$(brew --prefix)/include $CPPFLAGS" >> $GITHUB_ENV
         # For Apple Silicon Macs, ensure we can find libraries
-        if [[ $(uname -m) == "arm64" ]]; then
-          echo "LIBRARY_PATH=$(brew --prefix)/lib:$LIBRARY_PATH" >> $GITHUB_ENV
-        fi
+        echo "LIBRARY_PATH=$(brew --prefix)/lib:$LIBRARY_PATH" >> $GITHUB_ENV
 
     - name: Build
       run: |
@@ -107,26 +114,26 @@ jobs:
     - name: Upload Artifacts
       uses: actions/upload-artifact@v4
       with:
-        name: osx_binary
+        name: macOS_arm64_binary
         path: ./Goxel++.zip
         if-no-files-found: error
 
     - name: Build with xcode
       run: |
         cd osx/goxel
-        xcodebuild build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
+        xcodebuild build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ARCHS=arm64 ONLY_ACTIVE_ARCH=NO
         cd build/Release
         tar -cvf Goxel++.app.tar Goxel++.app
 
     - name: Upload app Artifacts
       uses: actions/upload-artifact@v4
       with:
-        name: goxelplusplus-mac.app
+        name: goxelplusplus-macOS-arm64.app
         path: ./osx/goxel/build/Release/Goxel++.app.tar
         if-no-files-found: error
 
   Success: # Not Necessary
-    needs: [linux_x86_64, macOS_x86_64, windows_x86_64]
+    needs: [linux_x86_64, macOS_arm64, windows_x86_64]
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
