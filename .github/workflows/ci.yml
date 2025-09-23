@@ -98,7 +98,7 @@ jobs:
 
     - name: Build with xcode
       run: |
-        cd osx/goxelplusplus
+        cd osx/goxel
         xcodebuild build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
         cd build/Release
         tar -cvf Goxel++.app.tar Goxel++.app
