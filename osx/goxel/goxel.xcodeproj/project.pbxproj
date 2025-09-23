@@ -3,11 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		785D7FE52E8239C7004A670D /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 785D7FE42E8239C7004A670D /* libglfw3.a */; };
+		785D7FE82E8253CE004A670D /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 785D7FE72E8253CE004A670D /* libglfw3.a */; };
 		F007DFE82C35546700526FA2 /* geometry.c in Sources */ = {isa = PBXBuildFile; fileRef = F007DFE62C35546700526FA2 /* geometry.c */; };
 		F00FC312226B2F7C0002F251 /* ini.c in Sources */ = {isa = PBXBuildFile; fileRef = F00FC2FC226B2F7B0002F251 /* ini.c */; };
 		F00FC313226B2F7C0002F251 /* gl.c in Sources */ = {isa = PBXBuildFile; fileRef = F00FC2FD226B2F7B0002F251 /* gl.c */; };
@@ -127,7 +127,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		785D7FE42E8239C7004A670D /* libglfw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libglfw3.a; path = ../../../../../../../opt/homebrew/Cellar/glfw/3.4/lib/libglfw3.a; sourceTree = "<group>"; };
+		785D7FE72E8253CE004A670D /* libglfw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libglfw3.a; path = ../../../../../../../opt/homebrew/Cellar/glfw/3.4/lib/libglfw3.a; sourceTree = "<group>"; };
 		F007DFE62C35546700526FA2 /* geometry.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = geometry.c; sourceTree = "<group>"; };
 		F007DFE72C35546700526FA2 /* geometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = geometry.h; sourceTree = "<group>"; };
 		F00FC2F9226B2F7B0002F251 /* sound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sound.h; sourceTree = "<group>"; };
@@ -194,7 +194,7 @@
 		F06C68391D2EAECC00887FCE /* camera.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = camera.c; sourceTree = "<group>"; };
 		F06C683A1D2EAECC00887FCE /* quantization.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = quantization.c; sourceTree = "<group>"; };
 		F076EA352284162400B74F0C /* light_panel.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = light_panel.c; sourceTree = "<group>"; };
-		F07DE9CF1BD0F03900BAA1AD /* GoxelPlusPlus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoxelPlusPlus.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F07DE9CF1BD0F03900BAA1AD /* goxel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = goxel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F07DE9D21BD0F03900BAA1AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F07DE9D41BD0F03900BAA1AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F07DE9D71BD0F03900BAA1AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
@@ -288,7 +288,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				785D7FE52E8239C7004A670D /* libglfw3.a in Frameworks */,
+				785D7FE82E8253CE004A670D /* libglfw3.a in Frameworks */,
 				F0EEB7E81C8EC4D1004AB676 /* libz.tbd in Frameworks */,
 				F07DEA331BD1014800BAA1AD /* CoreFoundation.framework in Frameworks */,
 				F07DE9E01BD0F16300BAA1AD /* OpenGL.framework in Frameworks */,
@@ -298,10 +298,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		785D7FE32E8239C7004A670D /* Frameworks */ = {
+		785D7FE62E8253CE004A670D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				785D7FE42E8239C7004A670D /* libglfw3.a */,
+				785D7FE72E8253CE004A670D /* libglfw3.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -404,7 +404,7 @@
 				F07DEA321BD1014800BAA1AD /* CoreFoundation.framework */,
 				F07DE9DF1BD0F16300BAA1AD /* OpenGL.framework */,
 				F07DE9D11BD0F03900BAA1AD /* goxel */,
-				785D7FE32E8239C7004A670D /* Frameworks */,
+				785D7FE62E8253CE004A670D /* Frameworks */,
 				F07DE9D01BD0F03900BAA1AD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -412,7 +412,7 @@
 		F07DE9D01BD0F03900BAA1AD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F07DE9CF1BD0F03900BAA1AD /* GoxelPlusPlus.app */,
+				F07DE9CF1BD0F03900BAA1AD /* goxel.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -583,9 +583,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F07DE9CE1BD0F03900BAA1AD /* GoxelPlusPlus */ = {
+		F07DE9CE1BD0F03900BAA1AD /* goxel */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F07DE9DC1BD0F03900BAA1AD /* Build configuration list for PBXNativeTarget "GoxelPlusPlus" */;
+			buildConfigurationList = F07DE9DC1BD0F03900BAA1AD /* Build configuration list for PBXNativeTarget "goxel" */;
 			buildPhases = (
 				F07DE9CB1BD0F03900BAA1AD /* Sources */,
 				F07DE9CC1BD0F03900BAA1AD /* Frameworks */,
@@ -595,9 +595,9 @@
 			);
 			dependencies = (
 			);
-			name = GoxelPlusPlus;
+			name = goxel;
 			productName = goxel;
-			productReference = F07DE9CF1BD0F03900BAA1AD /* GoxelPlusPlus.app */;
+			productReference = F07DE9CF1BD0F03900BAA1AD /* goxel.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -606,8 +606,7 @@
 		F07DE9C71BD0F03900BAA1AD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				BuildIndependentTargetsInParallel = YES;
-				LastUpgradeCheck = 2600;
+				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Noctua Software Limited";
 				TargetAttributes = {
 					F07DE9CE1BD0F03900BAA1AD = {
@@ -618,11 +617,12 @@
 					};
 				};
 			};
-			buildConfigurationList = F07DE9CA1BD0F03900BAA1AD /* Build configuration list for PBXProject "Goxel++" */;
+			buildConfigurationList = F07DE9CA1BD0F03900BAA1AD /* Build configuration list for PBXProject "goxel" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = en;
+			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -631,7 +631,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F07DE9CE1BD0F03900BAA1AD /* GoxelPlusPlus */,
+				F07DE9CE1BD0F03900BAA1AD /* goxel */,
 			);
 		};
 /* End PBXProject section */
@@ -785,7 +785,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -804,7 +803,6 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -812,13 +810,10 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
-				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = RXW2CQWZPJ;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -837,7 +832,6 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
-				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -846,7 +840,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -865,7 +858,6 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -873,13 +865,10 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
-				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = RXW2CQWZPJ;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -891,9 +880,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
-				STRING_CATALOG_GENERATE_SYMBOLS = YES;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};
 			name = Release;
 		};
@@ -906,11 +893,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEAD_CODE_STRIPPING = YES;
-				ENABLE_APP_SANDBOX = YES;
-				ENABLE_HARDENED_RUNTIME = YES;
-				ENABLE_USER_SELECTED_FILES = readwrite;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				DEVELOPMENT_TEAM = RXW2CQWZPJ;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/goxel/goxel.pch";
 				HEADER_SEARCH_PATHS = (
@@ -918,16 +901,13 @@
 					"/opt/homebrew/include/**",
 				);
 				INFOPLIST_FILE = goxel/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"/opt/homebrew/include/**",
 					/opt/homebrew/Cellar/glfw/3.4/lib,
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.magicengineering.goxelplusplus;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
+				PRODUCT_BUNDLE_IDENTIFIER = co.magicengineering.goxelplusplus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/goxel/goxel-Bridging-Header.h";
@@ -945,11 +925,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEAD_CODE_STRIPPING = YES;
-				ENABLE_APP_SANDBOX = YES;
-				ENABLE_HARDENED_RUNTIME = YES;
-				ENABLE_USER_SELECTED_FILES = readwrite;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				DEVELOPMENT_TEAM = RXW2CQWZPJ;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/goxel/goxel.pch";
 				HEADER_SEARCH_PATHS = (
@@ -957,16 +933,13 @@
 					"/opt/homebrew/include/**",
 				);
 				INFOPLIST_FILE = goxel/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"/opt/homebrew/include/**",
 					/opt/homebrew/Cellar/glfw/3.4/lib,
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.magicengineering.goxelplusplus;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
+				PRODUCT_BUNDLE_IDENTIFIER = co.magicengineering.goxelplusplus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/goxel/goxel-Bridging-Header.h";
@@ -978,7 +951,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F07DE9CA1BD0F03900BAA1AD /* Build configuration list for PBXProject "Goxel++" */ = {
+		F07DE9CA1BD0F03900BAA1AD /* Build configuration list for PBXProject "goxel" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F07DE9DA1BD0F03900BAA1AD /* Debug */,
@@ -987,7 +960,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F07DE9DC1BD0F03900BAA1AD /* Build configuration list for PBXNativeTarget "GoxelPlusPlus" */ = {
+		F07DE9DC1BD0F03900BAA1AD /* Build configuration list for PBXNativeTarget "goxel" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F07DE9DD1BD0F03900BAA1AD /* Debug */,
