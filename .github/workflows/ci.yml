@@ -78,8 +78,23 @@ jobs:
       with:
         submodules: recursive
 
-    - name: Install scons, glfw3 & tre
-      run: brew install scons glfw tre
+    - name: Install dependencies
+      run: |
+        # Update Homebrew to ensure we get the latest packages
+        brew update
+        # Install required dependencies
+        brew install scons glfw tre pkg-config
+
+    - name: Set up build environment
+      run: |
+        # Add Homebrew paths to environment for reliable linking
+        echo "PKG_CONFIG_PATH=$(brew --prefix)/lib/pkgconfig:$PKG_CONFIG_PATH" >> $GITHUB_ENV
+        echo "LDFLAGS=-L$(brew --prefix)/lib $LDFLAGS" >> $GITHUB_ENV
+        echo "CPPFLAGS=-I$(brew --prefix)/include $CPPFLAGS" >> $GITHUB_ENV
+        # For Apple Silicon Macs, ensure we can find libraries
+        if [[ $(uname -m) == "arm64" ]]; then
+          echo "LIBRARY_PATH=$(brew --prefix)/lib:$LIBRARY_PATH" >> $GITHUB_ENV
+        fi
 
     - name: Build
       run: |
@@ -99,13 +114,7 @@ jobs:
     - name: Build with xcode
       run: |
         cd osx/goxel
-        # Detect Homebrew prefix (handles both Intel and Apple Silicon)
-        HOMEBREW_PREFIX=$(brew --prefix)
-        xcodebuild build \
-        CODE_SIGN_IDENTITY="" \
-        CODE_SIGNING_REQUIRED=NO \
-        HEADER_SEARCH_PATHS="\$(inherited) ${HOMEBREW_PREFIX}/include" \
-        LIBRARY_SEARCH_PATHS="\$(inherited) ${HOMEBREW_PREFIX}/lib"
+        xcodebuild build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
         cd build/Release
         tar -cvf Goxel++.app.tar Goxel++.app
 
@@ -113,10 +122,10 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: goxelplusplus-mac.app
-        path: ./osx/goxelplusplus/build/Release/Goxel++.app.tar
+        path: ./osx/goxel/build/Release/Goxel++.app.tar
         if-no-files-found: error
 
-  Success: # Not Neccessary
+  Success: # Not Necessary
     needs: [linux_x86_64, osx_x86_64, windows_x86_64]
     runs-on: ubuntu-latest
     steps:
