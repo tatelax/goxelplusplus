@@ -17,7 +17,7 @@
             <li>Many export formats: Goxel can export to obj, pyl, magica voxel, png, qubicle, povray, and more.</li>
         </ul>
     </description>
-    <launchable type="desktop-id">goxel.desktop</launchable>
+    <launchable type="desktop-id">goxel++.desktop</launchable>
     <screenshots>
         <screenshot type="default">
             <caption>Fisherman house, made with Goxel by Thibault Simar</caption>

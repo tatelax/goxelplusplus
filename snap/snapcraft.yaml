@@ -10,7 +10,6 @@ confinement: strict
 apps:
   goxel:
     command: desktop-launch $SNAP/Goxel++
-    desktop: snap/gui/Goxel++.desktop
     plugs:
       - x11
       - opengl

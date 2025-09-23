@@ -52,7 +52,7 @@ install:
 	            $${size}x$${size}/apps/Goxel++.png)
 	done
 	install -Dm644 snap/gui/Goxel++.desktop \
-	    $(DESTDIR)$(PREFIX)/share/applications/goxel++.desktop
+	    $(DESTDIR)$(PREFIX)/share/applications/Goxel++.desktop
 	install -Dm644 \
 	    snap/gui/co.magicengineering.GoxelPlusPlus.metainfo.xml \
 	    $$(printf '%s%s' $(DESTDIR)$(PREFIX)/share/metainfo/ \
