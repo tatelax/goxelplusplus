@@ -30,7 +30,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: win_x86_64_binary
-          path: goxel.exe
+          path: Goxel++.exe
           if-no-files-found: error
 
   linux_x86_64:
@@ -61,14 +61,14 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: linux_x86_64_binary
-        path: goxel
+        path: Goxel++
         if-no-files-found: error
 
     - name: Upload AppImage
       uses: actions/upload-artifact@v4
       with:
         name: appimage
-        path: Goxel*.AppImage
+        path: Goxel++*.AppImage
         if-no-files-found: error
 
   osx_x86_64:
@@ -87,27 +87,27 @@ jobs:
 
     - name: Compress artifact
       run: |
-        zip goxel.zip goxel
+        zip Goxel++.zip Goxel++
 
     - name: Upload Artifacts
       uses: actions/upload-artifact@v4
       with:
         name: osx_binary
-        path: ./goxel.zip
+        path: ./Goxel++.zip
         if-no-files-found: error
 
     - name: Build with xcode
       run: |
-        cd osx/goxel
+        cd osx/goxelplusplus
         xcodebuild build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
         cd build/Release
-        tar -cvf goxel.app.tar goxel.app
+        tar -cvf Goxel++.app.tar Goxel++.app
 
     - name: Upload app Artifacts
       uses: actions/upload-artifact@v4
       with:
-        name: goxel-mac.app
-        path: ./osx/goxel/build/Release/goxel.app.tar
+        name: goxelplusplus-mac.app
+        path: ./osx/goxelplusplus/build/Release/Goxel++.app.tar
         if-no-files-found: error
 
   Success: # Not Neccessary

@@ -192,7 +192,7 @@
 		F06C68391D2EAECC00887FCE /* camera.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = camera.c; sourceTree = "<group>"; };
 		F06C683A1D2EAECC00887FCE /* quantization.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = quantization.c; sourceTree = "<group>"; };
 		F076EA352284162400B74F0C /* light_panel.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = light_panel.c; sourceTree = "<group>"; };
-		F07DE9CF1BD0F03900BAA1AD /* goxel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = goxel.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F07DE9CF1BD0F03900BAA1AD /* Goxel++.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Goxel++.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F07DE9D21BD0F03900BAA1AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F07DE9D41BD0F03900BAA1AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F07DE9D71BD0F03900BAA1AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
@@ -400,7 +400,7 @@
 		F07DE9D01BD0F03900BAA1AD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F07DE9CF1BD0F03900BAA1AD /* goxel.app */,
+				F07DE9CF1BD0F03900BAA1AD /* Goxel++.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -571,9 +571,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F07DE9CE1BD0F03900BAA1AD /* goxel */ = {
+		F07DE9CE1BD0F03900BAA1AD /* Goxel++ */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F07DE9DC1BD0F03900BAA1AD /* Build configuration list for PBXNativeTarget "goxel" */;
+			buildConfigurationList = F07DE9DC1BD0F03900BAA1AD /* Build configuration list for PBXNativeTarget "Goxel++" */;
 			buildPhases = (
 				F07DE9CB1BD0F03900BAA1AD /* Sources */,
 				F07DE9CC1BD0F03900BAA1AD /* Frameworks */,
@@ -583,9 +583,9 @@
 			);
 			dependencies = (
 			);
-			name = goxel;
+			name = "Goxel++";
 			productName = goxel;
-			productReference = F07DE9CF1BD0F03900BAA1AD /* goxel.app */;
+			productReference = F07DE9CF1BD0F03900BAA1AD /* Goxel++.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -599,13 +599,13 @@
 				TargetAttributes = {
 					F07DE9CE1BD0F03900BAA1AD = {
 						CreatedOnToolsVersion = 7.0.1;
-						DevelopmentTeam = VH4XTANA7R;
+						DevelopmentTeam = RXW2CQWZPJ;
 						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = F07DE9CA1BD0F03900BAA1AD /* Build configuration list for PBXProject "goxel" */;
+			buildConfigurationList = F07DE9CA1BD0F03900BAA1AD /* Build configuration list for PBXProject "Goxel++" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -619,7 +619,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F07DE9CE1BD0F03900BAA1AD /* goxel */,
+				F07DE9CE1BD0F03900BAA1AD /* Goxel++ */,
 			);
 		};
 /* End PBXProject section */
@@ -881,14 +881,14 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = VH4XTANA7R;
+				DEVELOPMENT_TEAM = RXW2CQWZPJ;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/goxel/goxel.pch";
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/../../src";
 				INFOPLIST_FILE = goxel/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.noctuasoftware.goxel;
+				PRODUCT_BUNDLE_IDENTIFIER = com.magicengineering.goxelplusplus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/goxel/goxel-Bridging-Header.h";
@@ -906,14 +906,14 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = VH4XTANA7R;
+				DEVELOPMENT_TEAM = RXW2CQWZPJ;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/goxel/goxel.pch";
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/../../src";
 				INFOPLIST_FILE = goxel/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.noctuasoftware.goxel;
+				PRODUCT_BUNDLE_IDENTIFIER = com.magicengineering.goxelplusplus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/goxel/goxel-Bridging-Header.h";
@@ -925,7 +925,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F07DE9CA1BD0F03900BAA1AD /* Build configuration list for PBXProject "goxel" */ = {
+		F07DE9CA1BD0F03900BAA1AD /* Build configuration list for PBXProject "Goxel++" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F07DE9DA1BD0F03900BAA1AD /* Debug */,
@@ -934,7 +934,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F07DE9DC1BD0F03900BAA1AD /* Build configuration list for PBXNativeTarget "goxel" */ = {
+		F07DE9DC1BD0F03900BAA1AD /* Build configuration list for PBXNativeTarget "Goxel++" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F07DE9DD1BD0F03900BAA1AD /* Debug */,

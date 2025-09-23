@@ -14,6 +14,11 @@ About
 You can use Goxel++ to create voxel graphics (3D images formed of cubes).  It
 works on Linux, BSD, Windows and macOS.
 
+Improvements
+____________
+
+* Ability to press [ ] to increase brush size
+
 
 Download
 --------
@@ -79,7 +84,7 @@ Then to build, run the command:
 
 # Windows
 
-You need to install msys2 mingw, and the following packages:
+You need to install MSYS2 and use the **MSYS2 MINGW64** terminal to install the following packages:
 
     pacman -S mingw-w64-x86_64-gcc
     pacman -S mingw-w64-x86_64-glfw
@@ -90,7 +95,6 @@ You need to install msys2 mingw, and the following packages:
 Then to build:
 
     make release
-
 
 Contributing
 ------------
