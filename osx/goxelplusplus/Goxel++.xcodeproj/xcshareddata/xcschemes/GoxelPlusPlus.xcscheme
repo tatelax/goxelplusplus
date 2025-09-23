@@ -16,9 +16,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F07DE9CE1BD0F03900BAA1AD"
-               BuildableName = "Goxel++.app"
-               BlueprintName = "Goxel++"
-               ReferencedContainer = "container:goxel++.xcodeproj">
+               BuildableName = "GoxelPlusPlus.app"
+               BlueprintName = "GoxelPlusPlus"
+               ReferencedContainer = "container:Goxel++.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F07DE9CE1BD0F03900BAA1AD"
-            BuildableName = "Goxel++.app"
-            BlueprintName = "Goxel++"
-            ReferencedContainer = "container:goxel++.xcodeproj">
+            BuildableName = "GoxelPlusPlus.app"
+            BlueprintName = "GoxelPlusPlus"
+            ReferencedContainer = "container:Goxel++.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F07DE9CE1BD0F03900BAA1AD"
-            BuildableName = "Goxel++.app"
-            BlueprintName = "Goxel++"
-            ReferencedContainer = "container:goxel++.xcodeproj">
+            BuildableName = "GoxelPlusPlus.app"
+            BlueprintName = "GoxelPlusPlus"
+            ReferencedContainer = "container:Goxel++.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
