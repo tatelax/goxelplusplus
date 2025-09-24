@@ -16,10 +16,18 @@ About
 You can use Goxel++ to create voxel graphics (3D images formed of cubes).  It
 works on Linux, BSD, Windows and macOS.
 
-Improvements
-____________
+Goxel++ features over Goxel
+---------------------------
 
-* Ability to press [ ] to increase brush size
+* Adds camera "fly mode" with controls similar to Unity.
+  * Hold right mouse button and press W, A, S, or D to enter fly mode.
+  * WASD to control camera, Q/E to move up and down or Ctrl/Space.
+  * Left shift to double fly speed
+* Adds ability to set snapping size to match current brush size
+* Adds adjustable camera FOV
+* Adds zoom to cursor position instead of zoom to center of screen
+* Adds zoom collision so zooming stops when close to a voxel
+* Unified two ways of exporting into one
 
 
 Download
